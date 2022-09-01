@@ -22,6 +22,7 @@ const currentLaguage = (new function () {
   let _labels = labels[_lang];
 
   this.getLabel = function (label) {
+    console.log(this.getLanguage());
     return _labels[label] || `[${label}]`;
   }
 
