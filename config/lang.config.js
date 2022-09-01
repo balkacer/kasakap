@@ -26,6 +26,7 @@ const currentLaguage = (new function () {
   }
 
   this.setLanguage = function (lang) {
+    console.info(`Setting language to ${lang}`);
     _lang = lang;
     _labels = labels[_lang] ?? labels["es"];
   }
