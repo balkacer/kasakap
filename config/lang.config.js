@@ -17,16 +17,22 @@ const labels = {
   })(),
 };
 
-export function getLanguage() {
-  return window.navigator.language.split("-")[0];
-}
+const currentLaguage = (new function () {
+  let _lang = "es";
+  let _labels = labels[_lang];
 
-// export function setLanguage(language) {
-//   localStorage.setItem("lang" language);
-// }
+  this.getLabel = function (label) {
+    return _labels[label] || `[${label}]`;
+  }
 
-export function getLabel(label) {
-  const lang = getLanguage();
-  console.log(lang === "es" ? "el lenguaje del usuario es" : "user language is", lang);
-  return ""+labels[lang][label] ?? "[" + label + "]";
-}
+  this.setLanguage = function (lang) {
+    _lang = lang;
+    _labels = labels[lang] ?? labels["es"];
+  }
+
+  this.getLanguage = function () {
+    return _lang;
+  }
+})();
+
+export default currentLaguage;
