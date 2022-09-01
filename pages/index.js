@@ -1,14 +1,7 @@
-import React, { useState, useEffect } from "react";
 import Head from "next/head";
 import currentLaguage from "../config/lang.config";
 
 export default function Home() {
-  useEffect(() => {
-    console.log(
-      typeof window !== "undefined" ? window.navigator.language.split("-")[0] : "es"
-    );
-  }, []);
-  
   const getLabel = (label) => {
     return "" + currentLaguage.getLabel(label);
   }

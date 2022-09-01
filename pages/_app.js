@@ -5,9 +5,8 @@ import currentLaguage from "../config/lang.config";
 
 function MyApp({ Component, pageProps }) {
   useEffect(() => {
-    currentLaguage.setLanguage(
-      typeof window !== "undefined" ? window.navigator.language.split('-')[0] : "es"
-    );
+    let lang = typeof window !== "undefined" ? window.navigator.language.split("-")[0] : "es";
+    currentLaguage.setLanguage(lang);
   }, []);
 
   return (
