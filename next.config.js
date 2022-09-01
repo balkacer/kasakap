@@ -1,7 +1,5 @@
 module.exports = {
   images: {
-    domains: [
-      "tailwindui.com"
-    ],
+    domains: ["https://tailwindui.com", "https://gravatar.com"],
   },
 };

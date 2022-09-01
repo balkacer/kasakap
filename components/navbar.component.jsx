@@ -1,49 +1,46 @@
+import { useState } from "react";
 import Image from "next/image";
-
-const navigation = [
-  { name: "Dashboard", href: "#", current: true },
-  { name: "Team", href: "#", current: false },
-  { name: "Projects", href: "#", current: false },
-  { name: "Calendar", href: "#", current: false },
-  { name: "Reports", href: "#", current: false },
-];
+import Link from "next/link";
+import { globalConfig } from "../config/global.config";
 
 const Navbar = () => {
+  const [activeRoute, setActiveRoute] = useState("/");
+
   return (
-    <div className="bg-primary-800 py-2">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
-          <div className="flex items-center">
-            <div className="flex-shrink-0">
-              <Image
-                width={48}
-                height={48}
-                className="h-8 w-8"
-                src="/img/logo.svg"
-                alt="Kasakap-logo"
-              />
-            </div>
-            <div className="hidden md:block">
-              <div className="ml-10 flex items-baseline space-x-4">
-                {navigation.map((item) => (
-                  <a
-                    key={item.name}
-                    href={item.href}
-                    className={`${
-                      item.current
-                        ? "bg-primary-900 text-primary-100"
-                        : "text-primary-300 hover:bg-primary-700 hover:text-primary-100"
-                    } px-3 py-2 rounded-md text-sm font-medium`}
-                    aria-current={item.current ? "page" : undefined}
-                  >
-                    {item.name}
-                  </a>
-                ))}
-              </div>
-            </div>
+    <div className="navbar-container">
+      <nav className="navbar">
+        <div className="navbar-nav">
+          <div className="navbar-brand">
+            <Link href="/">
+              <a onClick={() => setActiveRoute("/")}>
+                <Image src="/img/logo2.svg" alt="Logo" width={40} height={40} />
+              </a>
+            </Link>
           </div>
+          {
+            globalConfig.navbar.items.map((item, index) => (
+              <Link
+                href={item.link}
+
+                key={item.link}
+              >
+                <a className={`navbar-item ${activeRoute === item.link ? "active" : ""}`}
+                  onClick={() => setActiveRoute(item.link)}>
+                  {item.label}
+                </a>
+              </Link>
+            ))
+          }
         </div>
-      </div>
+        <div>
+          <Link href="/login">
+            <a className="navbar-item">Login</a>
+          </Link>
+          <Link href="/login">
+            <a className="navbar-item btn btn-secondary">Sign In</a>
+          </Link>
+        </div>
+      </nav>
     </div>
   );
 };

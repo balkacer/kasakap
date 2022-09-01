@@ -1,0 +1,36 @@
+:root {
+
+  /* Colors */
+  --c1: #d90429ff;
+  --c1_2: #ff4753;
+  --c2: #2b2d42ff;
+  --c2_2: #8d99aeff;
+  --c3: #edf2f4ff;
+
+  /* Fonts */
+  --font-family-sans-serif: normal normal normal 12px/1.4em "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-family-serif: normal normal 12px/1.4em "Times New Roman", Times, serif;
+  --font-family-monospace: normal normal normal 12px/1.4em "Courier New", Courier, monospace;
+  --font-family-base: var(--font-family-sans-serif);
+  --font-size-base: 1.4em;
+  --font-size-large: 1.6em;
+  --font-size-small: 1.2em;
+  --font-size-xsmall: 1em;
+  --font-weight-light: 300;
+  --font-weight-normal: 400;
+  --font-weight-bold: 700;
+  --font-weight-base: var(--font-weight-normal);
+
+  /* Spacing */
+  --spacing-base: 1.6em;
+  --spacing-large: 2.4em;
+  --spacing-small: 1.2em;
+  --spacing-xsmall: 1em;
+
+  /* Breakpoints */
+  --breakpoint-phone: 320px;
+  --breakpoint-tablet: 576px;
+  --breakpoint-tablet-l: 768px;
+  --breakpoint-desktop: 992px;
+  --breakpoint-desktop-l: 1200px;
+}

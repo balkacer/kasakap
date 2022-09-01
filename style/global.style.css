@@ -1,0 +1,111 @@
+@import "./theme.style.css";
+
+* {
+  margin: 0;
+  padding: 0;
+  font: var(--font-family-base);
+  box-sizing: border-box;
+}
+
+#container {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+#header {
+  width: 100%;
+  height: 50px;
+  background-color: var(--c3);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--spacing-base);
+}
+
+#navbar {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.navbar-item {
+  font-size: 1.2em;
+  font-weight: bold;
+  color: var(--c2);
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.navbar-item:hover {
+  color: var(--c2_2);
+}
+
+.navbar-item.active {
+  color: var(--c1);
+}
+
+.title {
+  font-size: 4em;
+  font-weight: bold;
+  color: var(--c1);
+}
+
+.description {
+  font-size: 2em;
+  color: var(--c2_2);
+  text-align: center;
+  max-width: 850px;
+}
+
+.enphatized {
+  color: var(--c2);
+  font-size: 1em;
+  font-weight: bold;
+}
+
+#content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow-x: hidden;
+  overflow-y: auto;
+  padding: var(--spacing-base);
+}
+
+@media screen and (max-width: var(--breakpoint-phone)) {
+  #content {
+    max-width: var(--breakpoint-phone);
+  }
+}
+
+@media screen and (min-width: var(--breakpoint-tablet)) {
+  #content {
+    max-width: var(--breakpoint-tablet);
+  }
+}
+
+@media screen and (min-width: var(--breakpoint-tablet-l)) {
+  #content {
+    max-width: var(--breakpoint-tablet-l);
+  }
+}
+
+@media screen and (min-width: var(--breakpoint-desktop)) {
+  #content {
+    max-width: var(--breakpoint-desktop);
+  }
+}
+
+@media screen and (min-width: var(--breakpoint-desktop-l)) {
+  #content {
+    max-width: var(--breakpoint-desktop-l);
+  }
+}
