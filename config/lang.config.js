@@ -18,7 +18,7 @@ const labels = {
 };
 
 const currentLaguage = (new function () {
-  let _lang = typeof window !== "undefined" ? window.navigator.language.split("-")[0] : "en";
+  let _lang = "en";
   let _labels = labels[_lang];
 
   this.getLabel = function (label) {
