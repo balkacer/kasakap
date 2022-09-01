@@ -10,7 +10,7 @@ const labels = {
   en: (new function () {
     this.app_title = "Kasakap!"
     this.app_subtitle = "Capture the opportunity!"
-    this.app_description = `${this.app_title} is a platform that allows you to find the perfect place to live. Giving you information about the available apartments, the services they offer and the convenience of transport to reach one or several addresses, will help you to find the best place to live.`
+    this.app_description = `[enpha]${this.app_title}[endenpha] is a platform that allows you to find [enpha]the perfect place to live[endenpha]. Giving you information about the available apartments, the services they offer and the convenience of transport to reach one or several addresses, will help you to find the best place to live.`
     this.app_navbar_home = "Home"
     this.app_navbar_about = "About"
     this.app_navbar_contact = "Contact"
@@ -18,7 +18,7 @@ const labels = {
 };
 
 export function getLanguage() {
-  return 'es'
+  return window.navigator.language.split("-")[0];
 }
 
 // export function setLanguage(language) {
@@ -27,6 +27,6 @@ export function getLanguage() {
 
 export function getLabel(label) {
   const lang = getLanguage();
-  console.log(lang);
+  console.log(lang === "es" ? "el lenguaje del usuario es" : "user language is", lang);
   return ""+labels[lang][label] ?? "[" + label + "]";
 }
