@@ -43,7 +43,7 @@ export default function Home() {
           <h1 className="title">{getLabel("app_title")}</h1>
           <div
             className="description"
-            dangerouslySetInnerHTML={{ __html: getLabel("app_description").replaceAll('[enpha]', '<span class="enphatized">').replaceAll('[endenpha]', '</span>') }}
+            dangerouslySetInnerHTML={{ __html: getLabel("app_description").replace(/(\[enpha\])+/g, '<span class="enphatized">').replace(/(\[endenpha\])+/g, '</span>') }}
           >
           </div>
         </div>
